@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
   *    Kathleen Oneal - removed implementConfigId and machineConfigId, added EquipmentConfigId
   *    Justin Sliekers - implement device element changes
   *    Joseph Ross - Added EquipmentConfigurationGroup
+  *	   Jason Roesbeke - added Description    
   *******************************************************************************/
 
 using System;
@@ -36,7 +37,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? PrescriptionId { get; set; }
 
-        public int? ProductId { get; set; }
+        public List<int> ProductId { get; set; }
 
         public int? VarietyLocatorId { get; set; }
 
@@ -51,5 +52,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
 
         public Func<int, IEnumerable<DeviceElementUse>> GetDeviceElementUses { get; set; }
+
+        public string Description { get; set; }
+
     }
 }
